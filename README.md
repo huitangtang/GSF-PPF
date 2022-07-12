@@ -1,4 +1,4 @@
-# SemiSL-Study-2
+# GSF&PPF
 Code release for ``Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning'' published in CVPR 2022.
 
 ## Requirements
