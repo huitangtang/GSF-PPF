@@ -14,7 +14,7 @@ The references of the used datasets are included in the paper.
 2. Replace root and dataset in run.sh with those in one's own system. 
 3. Run command `sh run.sh`.
 
-The results are saved in the folder `./checkpoints/`.
+The results are saved in the folder `./results/`.
 
 ## Paper citation
 '''
