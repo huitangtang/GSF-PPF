@@ -17,7 +17,7 @@ The references of the used datasets are included in the paper.
 The results are saved in the folder `./results/`.
 
 ## Paper citation
-'''
+```
 @InProceedings{Tang_2022_CVPR,
     author    = {Tang, Hui and Jia, Kui},
     title     = {Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning},
@@ -26,4 +26,4 @@ The results are saved in the folder `./results/`.
     year      = {2022},
     pages     = {14658-14667}
 }
-'''
+```
