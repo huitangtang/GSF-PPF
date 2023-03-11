@@ -18,7 +18,7 @@ The results are saved in the folder `./results/`.
 
 ## Paper citation
 ```
-@InProceedings{Tang_2022_CVPR,
+@InProceedings{tang2022towards,
     author    = {Tang, Hui and Jia, Kui},
     title     = {Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning},
     booktitle = {Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition (CVPR)},
