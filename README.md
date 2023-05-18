@@ -1,6 +1,8 @@
 # GSF&PPF
 Code release for ``Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning'' published in CVPR 2022.
 
+[Project Page](https://huitangtang.github.io/GSF-PPF/) $\cdot$ [PDF Download](https://openaccess.thecvf.com/content/CVPR2022/papers/Tang_Towards_Discovering_the_Effectiveness_of_Moderately_Confident_Samples_for_Semi-Supervised_CVPR_2022_paper.pdf)
+
 ## Requirements
 - python 3.6.4
 - pytorch 1.4.0
