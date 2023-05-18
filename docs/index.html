@@ -160,14 +160,14 @@
     background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
   }
 </style>
-	<title>Stochastic Consensus:  Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers</title>
+	<title>Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning</title>
 </head>
 
 <body>
 <br>
 <span style="font-size:36px">
     <div style="text-align: center;">
-        Stochastic Consensus:  Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers
+        Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning
     </div>
 </span>
 <br>
@@ -175,19 +175,13 @@
 <br>
 <table align="center" width="700px">
     <tr>
-        <td align="center" width="200px">
+        <td align="center" width="300px">
             <div style="text-align: center;">
                 <span style="font-size:16px"><a href="https://huitangtang.github.io/">Hui Tang</a><sup>1</sup></span>
             </div>
         </td>
-	
-	<td align="center" width="200px">
-            <div style="text-align: center;">
-                <span style="font-size:16px"><a href="https://scholar.google.com.hk/citations?user=iC8zGqEAAAAJ&hl=zh-CN">Lin Sun</a><sup>2</sup></span>
-            </div>
-        </td>
         
-        <td align="center" width="200px">
+        <td align="center" width="300px">
             <div style="text-align: center;">
                 <span style="font-size:16px">
                     <a href="http://kuijia.site/">Kui Jia</a>
@@ -209,13 +203,6 @@
                 <span style="font-size:16px">South China University of Technology<sup>1</sup></span>
             </center>
         </td>
-
-        <td align="center" width="300px">
-            <center>
-                <span style="font-size:16px">Magic Leap, Sunnyvale, CA, USA<sup>2</sup></span>
-            </center>
-        </td>
-
     </tr>
     </tbody>
 </table>
@@ -240,7 +227,7 @@
             <div style="text-align: center;">
                 <span style="font-size:20px">
                     Code
-                    <a href="https://github.com/huitangtang/STOCO">[GitHub]</a>
+                    <a href="https://github.com/huitangtang/GSF-PPF">[GitHub]</a>
                 </span>
             </div>
         </td>
@@ -249,7 +236,7 @@
             <div style="text-align: center;">
                 <span style="font-size:20px">
                     Paper
-                    <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136910319.pdf">[ECVA]</a>
+                    <a href="https://openaccess.thecvf.com/content/CVPR2022/papers/Tang_Towards_Discovering_the_Effectiveness_of_Moderately_Confident_Samples_for_Semi-Supervised_CVPR_2022_paper.pdf">[CVF]</a>
                 </span>
             </div>
         </td>
@@ -276,18 +263,18 @@
     <tr>
         <td>
             <div style="text-align: center;">
-                <img src="resources/fig2.png" width="700px">
+                <img src="resources/GSF&PPF.png" width="700px">
             </div>
         </td>
     </tr>
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-		Diagram for our method of stochastic consensus (STOCO). 
-		To implement our proposed consistency criterion, we sample multiple classifiers from a learned Gaussian distribution; 
-		for the weakly-augmented version of any unlabeled sample, we calculate the element-wise product of category predictions from these stochastic classifiers and select samples with the maximum value in the product higher than a pre-defined threshold $\tau$; 
-		we take an average over the predictions from multiple classifiers, and generate pseudo labels from the thus obtained averages via deep discriminative clustering; 
-		then, with these derived targets, the model is trained using the strongly-augmented version of selected samples via a cross-entropy loss.
+		We propose to utilize moderately confident samples for better model optimization. 
+		Based on the principle of local optimization landscape consistency, we propose Taylor expansion inspired filtration framework, 
+		relying on the Taylor expansion of the loss function to inspire the key measurement index of sample filtration, i.e., gradient and feature of finite orders. 
+		We derive two novel filters from this framework: <i>gradient synchronization filter (GSF)</i> selecting samples with similar optimization dynamics to the most reliable one, 
+		and <i>prototype proximity filter (PPF)</i> selecting samples near semantic prototypes.
             </p>
         </td>
     </tr>
@@ -304,13 +291,22 @@
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-		Semi-supervised learning (SSL) has achieved new progress recently with the emerging framework of self-training deep networks, where the criteria for selection of unlabeled samples with pseudo labels play a key role in the empirical success. 
-		In this work, we propose such a new criterion based on consistency among multiple, stochastic classifiers, termed Stochastic Consensus (STOCO). 
-	        Specifically, we model parameters of the classifiers as a Gaussian distribution whose mean and standard deviation are jointly optimized during training. 
-		Due to the scarcity of labels in SSL, modeling classifiers as a distribution itself provides additional regularization that mitigates overfitting to the labeled samples. 
-		We technically generate pseudo labels using a simple but flexible framework of deep discriminative clustering, which benefits from the overall structure of data distribution. 
-	        We also provide theoretical analysis of our criterion by connecting with the theory of learning from noisy data. Our proposed criterion can be readily applied to self-training based SSL frameworks. 
-		By choosing the representative FixMatch as the baseline, our method with multiple stochastic classifiers achieves the state of the art on popular SSL benchmarks, especially in label-scarce cases.
+		Semi-supervised learning (SSL) has been studied for a long time to solve vision tasks in data-efficient application scenarios. 
+		SSL aims to learn a good classification model using a few labeled data together with large-scale unlabeled data. 
+		Recent advances achieve the goal by combining multiple SSL techniques, e.g., self-training and consistency regularization. 
+		From unlabeled samples, they usually adopt a confidence filter (CF) to select reliable ones with high prediction confidence. 
+		In this work, we study whether the moderately confident samples are useless and how to select the useful ones to improve model optimization. 
+		To answer these problems, we propose a novel Taylor expansion inspired filtration (TEIF) framework, 
+		which admits the samples of moderate confidence with similar feature or gradient to the respective one averaged over the labeled and highly confident unlabeled data. 
+		It can produce a stable and new information induced network update, leading to better generalization. 
+		Two novel filters are derived from this framework and can be naturally explained in two perspectives. 
+		One is gradient synchronization filter (GSF), which strengthens the optimization dynamic of fully-supervised learning; 
+		it selects the samples whose gradients are similar to class-wise majority gradients. 
+		The other is prototype proximity filter (PPF), which involves more prototypical samples in training to learn better semantic representations; 
+		it selects the samples near class-wise prototypes. 
+		They can be integrated into SSL methods with CF. 
+		We use the state-of-the-art FixMatch as the baseline. 
+		Experiments on popular SSL benchmarks show that we achieve the new state of the art.
             </p>
         </td>
     </tr>
@@ -335,9 +331,11 @@
             <p style="text-align:justify; text-justify:inter-ideograph;">
                 <br>
                 Diagram of combining self-training and consistency regularization.
-		Recent advances achieve semi-supervised learning (SSL) by combining multiple SSL techniques, e.g., self-training and consistency regularization.
-		The selection criteria used in existing methods are usually based on confidence filtering of pseudo labels, where the unlabeled samples with high confidence remain and others are discarded. 
-		We in this work show that the selection criterion can be further improved for better SSL.
+		The two techniques would be uninformative when the model predicts a uniform distribution over classes. 
+		Confidence filtering abandons the samples whose prediction confidences (ranged in [0,1]) are lower than a predefined high threshold (e.g., 0.95). 
+		It is reasonable that the least confident samples are extremely unreliable. 
+		But are all the moderately confident samples useless, e.g., with confidence ranged in (0.75,0.95)? 
+		Is there any way to pick out the useful ones to enhance the optimization power applied to the model? 
             </p>
         </td>
     </tr>
@@ -350,58 +348,57 @@
 </div>
 
 <div style="text-align: center;">
-    <h3>Consistency Criterion among Stochastic Classifiers</h3>
+    <h3>A Novel Framework of Taylor Expansion Inspired Filtration</h3>
 </div>
 	
 <table>
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                Inspired by co-training and tri-training; they leverage category predictions of one or two classifiers on unlabeled samples to enlarge the training set, 
-		wherein a designing principle is based on majority voting that shares a similar insight with the popular techniques of ensemble learning. 
+		In this work, we solve the questions by introducing a novel framework of Taylor expansion inspired filtration (TEIF). 
+		The Tayor formula of the cross-entropy loss function with respect to the feature of one sample with true or pseudo label mainly includes terms of the multiplication of gradient and feature of finite orders. 
+		To make the change of loss consistent in the neighborhood of the feature, this framework selects the samples of moderate confidence, whose feature or gradient is similar to the respective one averaged over the labeled and highly confident unlabeled data, which are the most reliable. 
 		<br>
 		<br>
-		Specifically, we sample multiple classifiers from a learned Gaussian distribution; 
-		for the weakly-augmented version of any unlabeled sample, we calculate the element-wise product of category predictions from these stochastic classifiers 
-		and select samples with the maximum value in the product higher than a pre-defined threshold &tau;. 
+		In essence, the samples with similar local manifolds are selected.
+		Hence, the final network update is still close to the one determined by the most reliable samples and further incorporates the new information contained in the selected samples of moderate confidence, such that the model optimization could be steady and improved.
+		From this framework, two novel filters are derived to select the helpful samples from the moderately confident unlabeled data. The selected samples together with the highly confident ones are then used to train the classification model.  
             </p>
         </td>
     </tr>
 </table>
 
 <div style="text-align: center;">
-    <h3>Pseudo Label Generation via Discriminative Clustering</h3>
+    <h3>Gradient Synchronization Filter (GSF)</h3>
 </div>
 	
 <table>
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                The deep discriminative clustering algorithm can encourage cluster size balance while respecting the underlying data distribution. 
-		Thus, we use this algorithm to generate pseudo labels for unlabeled samples. 
+		The first filter based on gradients assumes that one moderately confident sample is useful if it follows the optimization dynamic of fully-supervised learning. 
+		We can approximate the optimization dynamic by class-wise majority gradients, which are computed on features of the labeled and highly confident unlabeled samples.
 		<br>
 		<br>
-		Specifically, we take an average over the predictions from multiple classifiers, 
-		and generate pseudo labels from the thus obtained averages via deep discriminative clustering; 
-		then, with these derived targets, the model is trained using the strongly-augmented version of selected samples via a cross-entropy loss.
+		From those moderately confident samples, we select the ones that have similar feature gradients to the corresponding majority gradient. We thus term this method as gradient synchronization filter (GSF).
             </p>
         </td>
     </tr>
 </table>
-	
+
 <div style="text-align: center;">
-    <h3>Theoretical Analysis</h3>
+    <h3>Prototype Proximity Filter (PPF)</h3>
 </div>
 	
 <table>
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                We provide theoretical analysis for our method to show its progressively improved classification error by connecting with the probably approximately correct (PAC) learning theory on noisy data. 
-		Three conditions to progressively improve the model are derived from Theorem 1. Our method can satisfy the three conditions, as shown shortly.
+		The second filter based on features assumes that one moderately confident sample is useful if it has a certain level of prototypicality. 
 		<br>
 		<br>
-		Our theoretical analysis connects noisy label learning to SSL, and can serve as <i>a general analytical method</i> for pseudo-labeling based SSL frameworks including our STOCO.
+		The samples near prototypes are selected from those moderately confident unlabeled data. 
+		We thus term this method as prototype proximity filter (PPF). 
             </p>
 	    <div style="text-align: center;">
                 <img src="resources/theorem1.png" width="600px">
@@ -417,104 +414,136 @@
 </div>
 
 <div style="text-align: center;">
-    <h3>Ablation Studies</h3>
+    <h3>Ablation Study and Learning Analysis</h3>
 </div>
 
 <table>
     <tr>
         <td>
+            <p>
+                <b>
+                    R1: Moderate Confidence Bounding
+                </b>
+            </p>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                From the following table, we observe that our method (m = 5) degrades by 4.51% after removing the consistency criterion, 
-		and then by 2.02% after successively removing the deep discriminative clustering. This verifies that both components are indispensable and thus our method has a reasonable design. 
-		Given that the only difference between STOCO (m = 1) and STOCO (w/o CC) is whether they use a stochastic classifier, the former slightly outperforms the latter, showing the superiority of the stochastic classifier.
+		In the following figure, it is observed that the performance is almost always benign and stable in the respective small-value ranges of the lower and upper bounds. 
+		A possible reason is that the increase in the number of selected unlabeled samples 
+		(i.e., more samples are selected at smaller values) could compensate the negative effects caused by including low-quality samples in training. 
+		As the lower and upper bounds increase, the performance stays almost the same on the 250-label setting whereas it does not on the 40-label setting, 
+		revealing that the sensitivity of one SSL method to the hyperparameters is increased with fewer labels per class due to less reliable pattern learning. 
+		Note that when the upper bound has a value of 1, all unlabeled samples for training are selected by our GSF or PPF, 
+		and thus all highly confident samples may be discarded. 
+		In this case, the error rates go up, suggesting that the use of highly confident samples is indispensable for learning a good model. 
             </p>
 	    <br>
             <div style="text-align: center;">
-                <img src="resources/tab1.png" width="900px">
+                <img src="resources/fig4.png" width="900px">
             </div>
 	    <p style="text-align:center;">
-		We report error rates on a single 40-label split from CIFAR-10. STOCO (w/o CC and DDC) removes both consistency criterion among stochastic classifiers and pseudo label generation via discriminative clustering, namely FixMatch. STOCO (w/o CC) removes the consistency criterion only. STOCO (m = 5) is with 5 stochastic classifiers, i.e., our method.
+		Error rates w.r.t. the lower (left) and upper (center) bounds of moderate confidence, and the gradient synchronization threshold of our proposed GSF (right) on 40- and 250-label settings.
 	    </p>
         </td>
     </tr>
-</table>
-	
-<div style="text-align: center;">
-    <h3>Learning Analyses</h3>
-</div>
 
-<table>
+
     <tr>
         <td>
-            <p style="text-align:justify; text-justify:inter-ideograph;">
-                In the row of test loss, we find that FixMatch suffers a slight rise at the late stage of training whereas our STOCO does not, suggesting that <i>our method indeed has the effect of alleviating overfitting</i>. 
-		<br>
-		<br>
-		As the training process proceeds, our STOCO has an increasing mask rate, and its noise rate and mislabeled number decrease, indicating that the three conditions are satisfied; 
-		notably, our method achieves a much lower mislabeled number than FixMatch on all label settings, verifying that <i>the strength of STOCO comes from better noise reduction</i>. 
-		These observations corroborate our theoretical analysis.
+            <br>
+            <p>
+                <b>
+                    R2: Gradient Synchronization Thresholding
+                </b>
             </p>
-	    <br>
-            <div style="text-align: center;">
-                <img src="resources/fig3.png" width="900px">
-            </div>
-	    <p style="text-align:center;">
-		For all subfigures, the horizontal axis represents the training epoch; the colors of blue and orange correspond to the results of FixMatch and our method respectively. The results are obtained on CIFAR-10 with 40 (column 1), 250 (column 2), and 4, 000 (column 3) labels.
-	    </p>
-        </td>
-    </tr>
-</table>
-	
-<div style="text-align: center;">
-    <h3>Classifier Variance</h3>
-</div>
-
-<table>
-    <tr>
-        <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                We observe that as the learning process proceeds, the average variance gradually decreases, meaning that the discrepancy between stochastic classifiers reduces. 
-		This observation also suggests the convergence of the learned Gaussian distribution, which guarantees the stability of model training and performance improvement.
+                In the figure above, we can observe that with 25 labels per class, the error rate fluctuates very slightly with the increase of &tau;<sub>s</sub>, 
+		indicating that more highly confident samples (on account of more labels) can build a better foundation of model optimization for pattern learning. 
+		Hence, the selected low-quality samples have less adverse impact on the learned model’s classification behavior. 
+		On the 40-label setting, the performance changes considerably as varying the value of &tau;<sub>s</sub>, 
+		confirming that the hyperparameter sensitivity is inversely proportional to the number of labels available. 
             </p>
-	    <br>
-            <div style="text-align: center;">
-                <img src="resources/fig4.png" width="500px">
-            </div>
-	    <p style="text-align:center;">
-		Average variance of the learned Gaussian distribution during model training. 
-	    </p>
         </td>
     </tr>
-</table>
-	
-<div style="text-align: center;">
-    <h3>Feature Visualization</h3>
-</div>
 
-<table>
     <tr>
         <td>
+            <br>
+            <p>
+                <b>
+                    R3: Sample Selection Ratio
+                </b>
+            </p>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-                On the extremely label-scarce setting (cf. Figs. a and c), our STOCO yields more similar marginal feature distributions between the training and test data.
+		As the training process proceeds, these ratios first increase and then stabilize at the level close to 1, 
+		indicating that an increasing number of unlabeled samples participate in training; 
+		on the 250-label setting, these ratios are consistently higher than those on the 40-label setting, 
+		manifesting that more experience, more confidence in making decisions; 
+		the gap between the paired ratios of all selected samples and highly confident ones, 
+		i.e., the ratio of selected moderately confident samples, 
+		is big in the earlier stage and decreases in the later stage 
+		since the instinct of self-training is to produce more and more samples of high confidence. 
 		<br>
 		<br>
-		In Fig. b of FixMatch, two different classes wrongly merge into one cluster, e.g., red airplane and purple ship. 
-		A possible reason is that the shapes of a ship and a plane with its wings removed and the backgrounds of sky and sea are visually similar. 
-		In contrast, our STOCO separates these ambiguous classes in the feature space (cf. Fig. d), demonstrating that our method can learn more discriminative features.
+		In the following Fig. c, we observe that our GSF and PPF enjoy a lower mislabeled ratio, 
+		suggesting that <i>our methods can learn better decision boundaries closer to the ground-truth ones</i>.
             </p>
 	    <br>
             <div style="text-align: center;">
                 <img src="resources/fig5.png" width="900px">
             </div>
 	    <p style="text-align:center;">
-		The t-SNE visualization of features learned by FixMatch (left two columns) and our STOCO (right two columns). 
-		In columns 1 and 3, the colors of red and blue denote the training and test samples respectively; their counterparts whose classes are color-coded are in columns 2 and 4 respectively. 
-		Results in these plots are obtained on CIFAR-10 with 40 (a-d) and 250 (e-h) labels. 
+		Ratios of all selected samples (“ALL”) and highly confident ones (“HC”) in the unlabeled batch for 40- (left) and 250-label (center) settings, and mislabeled ratio (right) in the selected pseudo-labeled set on the 40-label setting.
+	    </p>
+        </td>
+    </tr>
+
+</table>
+
+	
+<div style="text-align: center;">
+    <h3>Saliency Map Visualization</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+		In the following figure, it is observed that our methods learn better feature representations that capture more complete semantic patterns, e.g., first example.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/fig6.png" width="600px">
+            </div>
+	    <p style="text-align:center;">
+		Visualizing the Grad-CAM saliency maps from the baseline FixMatch and our proposed GSF and PPF on 40- and 250-label settings. 
+		Note that the number on top of each picture means the ground-truth (first column) or predicted labels (other columns).
 	    </p>
         </td>
     </tr>
 </table>
 	
+	
+<div style="text-align: center;">
+    <h3>Confidence Spectrum</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                In the following figure, we observe that the higher the confidence of a sample, the more inclined our method is to select it.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/fig7.png" width="500px">
+            </div>
+	    <p style="text-align:center;">
+		Spectrum of confidence for samples selected by GSF and PPF. (128<sup>th</sup> epoch, CIFAR10@40).
+	    </p>
+        </td>
+    </tr>
+</table>
+
+
 <div style="text-align: center;">
     <h3>Comparison with SOTA</h3>
 </div>
@@ -523,14 +552,14 @@
     <tr>
         <td>
             <p style="text-align:justify; text-justify:inter-ideograph;">
-		Experiments on four typical benchmark datasets have demonstrated that our proposed STOCO outperforms existing methods and achieves the state of the art, especially in label-scarce cases.
+		 Experiments on SSL benchmarks show that our methods based on FixMatch achieve significant improvements in accuracy, verifying their efficacy in filtering samples of moderate confidence.
             </p>
 	    <br>
             <div style="text-align: center;">
-                <img src="resources/tab2.png" width="900px">
+                <img src="resources/tab1.png" width="900px">
             </div>
 	    <p style="text-align:center;">
-		Error rates for CIFAR-10, CIFAR-100, SVHN, and STL-10. 
+		Error rates (%) for CIFAR-10, CIFAR-100, and SVHN.
 	    </p>
         </td>
     </tr>
@@ -544,15 +573,13 @@
 </div>
       <pre>
   	<code>
-    @InProceedings{STOCO,
-	author={Tang, Hui
-	and Sun, Lin
-	and Jia, Kui},
-	title={Stochastic Consensus: Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers},
-	booktitle={Computer Vision -- ECCV 2022},
-	year={2022},
-	pages={330-346},
-	}
+		@inproceedings{tang2022towards,
+		  title={Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning},
+		  author={Tang, Hui and Jia, Kui},
+		  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+		  pages={14658--14667},
+		  year={2022}
+		}
   	</code>
       </pre>
 	
