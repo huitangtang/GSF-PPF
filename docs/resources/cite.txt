@@ -1,0 +1,7 @@
+@inproceedings{tang2022towards,
+  title={Towards Discovering the Effectiveness of Moderately Confident Samples for Semi-Supervised Learning},
+  author={Tang, Hui and Jia, Kui},
+  booktitle={Proceedings of the IEEE/CVF Conference on Computer Vision and Pattern Recognition},
+  pages={14658--14667},
+  year={2022}
+}
