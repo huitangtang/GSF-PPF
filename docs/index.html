@@ -1,1 +1,574 @@
-zzz
+<html>
+<head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+
+  <!--
+  <script src="./resources/jsapi" type="text/javascript"></script>
+  <script type="text/javascript" async>google.load("jquery", "1.3.2");</script>
+ -->
+    <style type="text/css">
+        @font-face {
+            font-family: 'Avenir Book';
+            src: url("./fonts/Avenir_Book.ttf"); /* File to be stored at your site */
+        }
+    body {
+    font-family: "Avenir Book", "HelveticaNeue-Light", "Helvetica Neue Light", "Helvetica Neue", Helvetica, Arial, "Lucida Grande", sans-serif;
+    font-weight:300;
+    font-size:14px;
+    margin-left: auto;
+    margin-right: auto;
+    width: 900px;
+  }
+  h1 {
+    font-weight:300;
+  }
+  h2 {
+    font-weight:300;
+  }
+
+  p {
+    font-weight:300;
+    line-height: 1.4;
+  }
+
+  code {
+    font-size: 0.8rem;
+    margin: 0 0.2rem;
+    padding: 0.5rem 0.8rem;
+    white-space: nowrap;
+    background: #efefef;
+    border: 1px solid #d3d3d3;
+    color: #000000;
+    border-radius: 3px;
+  }
+
+  pre > code {
+    display: block;
+    white-space: pre;
+    line-height: 1.5;
+    padding: 0;
+    margin: 0;
+  }
+
+  pre.prettyprint > code {
+    border: none;
+  }
+
+
+  .container {
+        display: flex;
+        align-items: center;
+        justify-content: center
+  }
+  .image {
+        flex-basis: 40%
+  }
+  .text {
+        padding-left: 20px;
+        padding-right: 20px;
+  }
+
+  .disclaimerbox {
+    background-color: #eee;
+    border: 1px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+    padding: 20px;
+  }
+
+  video.header-vid {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.header-img {
+    height: 140px;
+    border: 1px solid black;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+  }
+
+  img.rounded {
+    border: 0px solid #eeeeee;
+    border-radius: 10px ;
+    -moz-border-radius: 10px ;
+    -webkit-border-radius: 10px ;
+
+  }
+
+  a:link,a:visited
+  {
+    color: #1367a7;
+    text-decoration: none;
+  }
+  a:hover {
+    color: #208799;
+  }
+
+  td.dl-link {
+    height: 160px;
+    text-align: center;
+    font-size: 22px;
+  }
+
+  .layered-paper-big { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35), /* The third layer shadow */
+            15px 15px 0 0px #fff, /* The fourth layer */
+            15px 15px 1px 1px rgba(0,0,0,0.35), /* The fourth layer shadow */
+            20px 20px 0 0px #fff, /* The fifth layer */
+            20px 20px 1px 1px rgba(0,0,0,0.35), /* The fifth layer shadow */
+            25px 25px 0 0px #fff, /* The fifth layer */
+            25px 25px 1px 1px rgba(0,0,0,0.35); /* The fifth layer shadow */
+    margin-left: 10px;
+    margin-right: 45px;
+  }
+
+
+  .layered-paper { /* modified from: http://css-tricks.com/snippets/css/layered-paper/ */
+    box-shadow:
+            0px 0px 1px 1px rgba(0,0,0,0.35), /* The top layer shadow */
+            5px 5px 0 0px #fff, /* The second layer */
+            5px 5px 1px 1px rgba(0,0,0,0.35), /* The second layer shadow */
+            10px 10px 0 0px #fff, /* The third layer */
+            10px 10px 1px 1px rgba(0,0,0,0.35); /* The third layer shadow */
+    margin-top: 5px;
+    margin-left: 10px;
+    margin-right: 30px;
+    margin-bottom: 5px;
+  }
+
+  .vert-cent {
+    position: relative;
+      top: 50%;
+      transform: translateY(-50%);
+  }
+
+  hr
+  {
+    border: 0;
+    height: 1px;
+    background-image: linear-gradient(to right, rgba(0, 0, 0, 0), rgba(0, 0, 0, 0.75), rgba(0, 0, 0, 0));
+  }
+</style>
+	<title>Stochastic Consensus:  Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers</title>
+</head>
+
+<body>
+<br>
+<span style="font-size:36px">
+    <div style="text-align: center;">
+        Stochastic Consensus:  Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers
+    </div>
+</span>
+<br>
+<br>
+<br>
+<table align="center" width="700px">
+    <tr>
+        <td align="center" width="200px">
+            <div style="text-align: center;">
+                <span style="font-size:16px"><a href="https://huitangtang.github.io/">Hui Tang</a><sup>1</sup></span>
+            </div>
+        </td>
+	
+	<td align="center" width="200px">
+            <div style="text-align: center;">
+                <span style="font-size:16px"><a href="https://scholar.google.com.hk/citations?user=iC8zGqEAAAAJ&hl=zh-CN">Lin Sun</a><sup>2</sup></span>
+            </div>
+        </td>
+        
+        <td align="center" width="200px">
+            <div style="text-align: center;">
+                <span style="font-size:16px">
+                    <a href="http://kuijia.site/">Kui Jia</a>
+<!--                    <sup><img class="round" style="width:20px" src="./resources/corresponding_fig.png">3</sup>-->
+                    <sup>&#9993, 1</sup>
+                </span>
+            </div>
+        </td>
+    </tr>
+</table>
+
+<br>
+	
+<table align="center" width="700px">
+    <tbody>
+    <tr>
+        <td align="center" width="300px">
+            <center>
+                <span style="font-size:16px">South China University of Technology<sup>1</sup></span>
+            </center>
+        </td>
+
+        <td align="center" width="300px">
+            <center>
+                <span style="font-size:16px">Magic Leap, Sunnyvale, CA, USA<sup>2</sup></span>
+            </center>
+        </td>
+
+    </tr>
+    </tbody>
+</table>
+
+
+<table align="center" width="700px">
+    <tbody>
+    <tr>
+        <td align="center" width="300px">
+            <center>
+                <span style="font-size:16px"><sup>&#9993</sup>Corresponding author</span>
+            </center>
+        </td>
+    </tr>
+    </tbody>
+</table>
+
+<table align="center" width="700px">
+    <tbody>
+    <tr>
+        <td align="center" width="200px">
+            <div style="text-align: center;">
+                <span style="font-size:20px">
+                    Code
+                    <a href="https://github.com/huitangtang/STOCO">[GitHub]</a>
+                </span>
+            </div>
+        </td>
+
+        <td align="center" width="200px">
+            <div style="text-align: center;">
+                <span style="font-size:20px">
+                    Paper
+                    <a href="https://www.ecva.net/papers/eccv_2022/papers_ECCV/papers/136910319.pdf">[ECVA]</a>
+                </span>
+            </div>
+        </td>
+
+        <td align="center" width="200px">
+            <center>
+                <span style="font-size:20px">
+                    Cite <a href="resources/cite.txt">[BibTeX]</a>
+                </span>
+            </center>
+        </td>
+    </tr>
+    </tbody>
+</table>
+<br>
+<hr>
+
+<div style="text-align: center;">
+    <h2>Teaser</h2>
+</div>
+
+<p style="text-align:justify; text-justify:inter-ideograph;">
+<table>
+    <tr>
+        <td>
+            <div style="text-align: center;">
+                <img src="resources/fig2.png" width="700px">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+		Diagram for our method of stochastic consensus (STOCO). 
+		To implement our proposed consistency criterion, we sample multiple classifiers from a learned Gaussian distribution; 
+		for the weakly-augmented version of any unlabeled sample, we calculate the element-wise product of category predictions from these stochastic classifiers and select samples with the maximum value in the product higher than a pre-defined threshold $\tau$; 
+		we take an average over the predictions from multiple classifiers, and generate pseudo labels from the thus obtained averages via deep discriminative clustering; 
+		then, with these derived targets, the model is trained using the strongly-augmented version of selected samples via a cross-entropy loss.
+            </p>
+        </td>
+    </tr>
+</table>
+
+
+<br>
+<hr>
+<div style="text-align: center;">
+    <h2>Abstract</h2>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+		Semi-supervised learning (SSL) has achieved new progress recently with the emerging framework of self-training deep networks, where the criteria for selection of unlabeled samples with pseudo labels play a key role in the empirical success. 
+		In this work, we propose such a new criterion based on consistency among multiple, stochastic classifiers, termed Stochastic Consensus (STOCO). 
+	        Specifically, we model parameters of the classifiers as a Gaussian distribution whose mean and standard deviation are jointly optimized during training. 
+		Due to the scarcity of labels in SSL, modeling classifiers as a distribution itself provides additional regularization that mitigates overfitting to the labeled samples. 
+		We technically generate pseudo labels using a simple but flexible framework of deep discriminative clustering, which benefits from the overall structure of data distribution. 
+	        We also provide theoretical analysis of our criterion by connecting with the theory of learning from noisy data. Our proposed criterion can be readily applied to self-training based SSL frameworks. 
+		By choosing the representative FixMatch as the baseline, our method with multiple stochastic classifiers achieves the state of the art on popular SSL benchmarks, especially in label-scarce cases.
+            </p>
+        </td>
+    </tr>
+</table>
+
+<br>
+<hr>
+<div style="text-align: center;">
+    <h2>Background & Motivation</h2>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <div style="text-align: center;">
+                <img src="resources/fig1.png" width="500px">
+            </div>
+        </td>
+    </tr>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                <br>
+                Diagram of combining self-training and consistency regularization.
+		Recent advances achieve semi-supervised learning (SSL) by combining multiple SSL techniques, e.g., self-training and consistency regularization.
+		The selection criteria used in existing methods are usually based on confidence filtering of pseudo labels, where the unlabeled samples with high confidence remain and others are discarded. 
+		We in this work show that the selection criterion can be further improved for better SSL.
+            </p>
+        </td>
+    </tr>
+</table>
+
+<br>
+<hr>
+<div style="text-align: center;">
+    <h2>Highlights</h2>
+</div>
+
+<div style="text-align: center;">
+    <h3>Consistency Criterion among Stochastic Classifiers</h3>
+</div>
+	
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                Inspired by co-training and tri-training; they leverage category predictions of one or two classifiers on unlabeled samples to enlarge the training set, 
+		wherein a designing principle is based on majority voting that shares a similar insight with the popular techniques of ensemble learning. 
+		<br>
+		<br>
+		Specifically, we sample multiple classifiers from a learned Gaussian distribution; 
+		for the weakly-augmented version of any unlabeled sample, we calculate the element-wise product of category predictions from these stochastic classifiers 
+		and select samples with the maximum value in the product higher than a pre-defined threshold &tau;. 
+            </p>
+        </td>
+    </tr>
+</table>
+
+<div style="text-align: center;">
+    <h3>Pseudo Label Generation via Discriminative Clustering</h3>
+</div>
+	
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                The deep discriminative clustering algorithm can encourage cluster size balance while respecting the underlying data distribution. 
+		Thus, we use this algorithm to generate pseudo labels for unlabeled samples. 
+		<br>
+		<br>
+		Specifically, we take an average over the predictions from multiple classifiers, 
+		and generate pseudo labels from the thus obtained averages via deep discriminative clustering; 
+		then, with these derived targets, the model is trained using the strongly-augmented version of selected samples via a cross-entropy loss.
+            </p>
+        </td>
+    </tr>
+</table>
+	
+<div style="text-align: center;">
+    <h3>Theoretical Analysis</h3>
+</div>
+	
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                We provide theoretical analysis for our method to show its progressively improved classification error by connecting with the probably approximately correct (PAC) learning theory on noisy data. 
+		Three conditions to progressively improve the model are derived from Theorem 1. Our method can satisfy the three conditions, as shown shortly.
+		<br>
+		<br>
+		Our theoretical analysis connects noisy label learning to SSL, and can serve as <i>a general analytical method</i> for pseudo-labeling based SSL frameworks including our STOCO.
+            </p>
+	    <div style="text-align: center;">
+                <img src="resources/theorem1.png" width="600px">
+            </div>
+        </td>
+    </tr>
+</table>
+
+<br>
+<hr>
+<div style="text-align: center;">
+    <h2>Experiments</h2>
+</div>
+
+<div style="text-align: center;">
+    <h3>Ablation Studies</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                From the following table, we observe that our method (m = 5) degrades by 4.51% after removing the consistency criterion, 
+		and then by 2.02% after successively removing the deep discriminative clustering. This verifies that both components are indispensable and thus our method has a reasonable design. 
+		Given that the only difference between STOCO (m = 1) and STOCO (w/o CC) is whether they use a stochastic classifier, the former slightly outperforms the latter, showing the superiority of the stochastic classifier.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/tab1.png" width="900px">
+            </div>
+	    <p style="text-align:center;">
+		We report error rates on a single 40-label split from CIFAR-10. STOCO (w/o CC and DDC) removes both consistency criterion among stochastic classifiers and pseudo label generation via discriminative clustering, namely FixMatch. STOCO (w/o CC) removes the consistency criterion only. STOCO (m = 5) is with 5 stochastic classifiers, i.e., our method.
+	    </p>
+        </td>
+    </tr>
+</table>
+	
+<div style="text-align: center;">
+    <h3>Learning Analyses</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                In the row of test loss, we find that FixMatch suffers a slight rise at the late stage of training whereas our STOCO does not, suggesting that <i>our method indeed has the effect of alleviating overfitting</i>. 
+		<br>
+		<br>
+		As the training process proceeds, our STOCO has an increasing mask rate, and its noise rate and mislabeled number decrease, indicating that the three conditions are satisfied; 
+		notably, our method achieves a much lower mislabeled number than FixMatch on all label settings, verifying that <i>the strength of STOCO comes from better noise reduction</i>. 
+		These observations corroborate our theoretical analysis.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/fig3.png" width="900px">
+            </div>
+	    <p style="text-align:center;">
+		For all subfigures, the horizontal axis represents the training epoch; the colors of blue and orange correspond to the results of FixMatch and our method respectively. The results are obtained on CIFAR-10 with 40 (column 1), 250 (column 2), and 4, 000 (column 3) labels.
+	    </p>
+        </td>
+    </tr>
+</table>
+	
+<div style="text-align: center;">
+    <h3>Classifier Variance</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                We observe that as the learning process proceeds, the average variance gradually decreases, meaning that the discrepancy between stochastic classifiers reduces. 
+		This observation also suggests the convergence of the learned Gaussian distribution, which guarantees the stability of model training and performance improvement.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/fig4.png" width="500px">
+            </div>
+	    <p style="text-align:center;">
+		Average variance of the learned Gaussian distribution during model training. 
+	    </p>
+        </td>
+    </tr>
+</table>
+	
+<div style="text-align: center;">
+    <h3>Feature Visualization</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+                On the extremely label-scarce setting (cf. Figs. a and c), our STOCO yields more similar marginal feature distributions between the training and test data.
+		<br>
+		<br>
+		In Fig. b of FixMatch, two different classes wrongly merge into one cluster, e.g., red airplane and purple ship. 
+		A possible reason is that the shapes of a ship and a plane with its wings removed and the backgrounds of sky and sea are visually similar. 
+		In contrast, our STOCO separates these ambiguous classes in the feature space (cf. Fig. d), demonstrating that our method can learn more discriminative features.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/fig5.png" width="900px">
+            </div>
+	    <p style="text-align:center;">
+		The t-SNE visualization of features learned by FixMatch (left two columns) and our STOCO (right two columns). 
+		In columns 1 and 3, the colors of red and blue denote the training and test samples respectively; their counterparts whose classes are color-coded are in columns 2 and 4 respectively. 
+		Results in these plots are obtained on CIFAR-10 with 40 (a-d) and 250 (e-h) labels. 
+	    </p>
+        </td>
+    </tr>
+</table>
+	
+<div style="text-align: center;">
+    <h3>Comparison with SOTA</h3>
+</div>
+
+<table>
+    <tr>
+        <td>
+            <p style="text-align:justify; text-justify:inter-ideograph;">
+		Experiments on four typical benchmark datasets have demonstrated that our proposed STOCO outperforms existing methods and achieves the state of the art, especially in label-scarce cases.
+            </p>
+	    <br>
+            <div style="text-align: center;">
+                <img src="resources/tab2.png" width="900px">
+            </div>
+	    <p style="text-align:center;">
+		Error rates for CIFAR-10, CIFAR-100, SVHN, and STL-10. 
+	    </p>
+        </td>
+    </tr>
+</table>
+	
+<br>
+<hr>
+
+<div style="text-align: center;">
+    <h2>BibTeX</h2>
+</div>
+      <pre>
+  	<code>
+    @InProceedings{STOCO,
+	author={Tang, Hui
+	and Sun, Lin
+	and Jia, Kui},
+	title={Stochastic Consensus: Enhancing Semi-Supervised Learning with Consistency of Stochastic Classifiers},
+	booktitle={Computer Vision -- ECCV 2022},
+	year={2022},
+	pages={330-346},
+	}
+  	</code>
+      </pre>
+	
+<br>
+<hr>
+
+<div style="text-align: center;">
+    <h2>Acknowledgements</h2>
+</div>
+      <p>
+	      Based on a template by <a href="https://kyanchen.github.io/OvarNet/">Keyan Chen</a>.
+      </p>
+
+<br>
+<br>
+<br>
+
+</body>
+</html>
